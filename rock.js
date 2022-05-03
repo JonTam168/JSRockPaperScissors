@@ -38,9 +38,18 @@ function playRound(playerSelect, computerSelect){
 
 function game(){
     for (let i=0; i<5;i++){
+        let condition = ''
 
         let play = prompt("Pick Rock, Paper or Scissors:")
-        playRound(play.toLowerCase(), computerPlay()) 
+        condition = playRound(play.toLowerCase(), computerPlay()) 
+        console.log(condition)
+        if (condition.match("Win")){
+            win++;
+        }
+        else if(condition.match("Lose")){
+            lose++
+        }
+        console.log("Wins: " + win + " Loses: " + lose)
     }
 }
 
